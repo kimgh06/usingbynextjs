@@ -4,15 +4,16 @@ import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const router = useRouter();
+  console.log(router)
   const pathname = usePathname();
   return <nav>
-    <Link href="/">
+    <Link href="/" className="a" legacyBehavior>
       <span className={pathname === '/' ? "active" : ""} >
         HOME
       </span>
     </Link>
-    <Link href="/hello">
-      <span className={pathname === '/hello' ? "active" : ""} >
+    <Link href="/hello" legacyBehavior >
+      <span className={pathname === '/hello' ? "active" : ""}>
         hello
       </span>
     </Link>
@@ -20,6 +21,9 @@ const Navbar = () => {
       {`
         a {
           text-decoration: none;
+        }
+        span{
+          cursor: pointer;
         }
         nav {
           background-color: tomato;
