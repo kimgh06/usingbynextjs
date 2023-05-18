@@ -1,8 +1,7 @@
-import Navbar from "@/components/Navbar";
+"use client";
 
 export default function Home() {
   return <div>
-    <Navbar />
     asdf
   </div>;
 }

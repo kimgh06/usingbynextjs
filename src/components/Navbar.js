@@ -4,7 +4,6 @@ import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const router = useRouter();
-  console.log(router)
   const pathname = usePathname();
   return <nav>
     <Link href="/" className="a" legacyBehavior>
