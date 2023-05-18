@@ -1,5 +1,5 @@
-export default function Header() {
+export default function Header({ title }) {
   return (
-    <title>안녕하세요</title>
+    <title>{title}</title>
   );
 }
