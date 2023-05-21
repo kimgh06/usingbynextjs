@@ -10,7 +10,7 @@ const imgUrl = "https://image.tmdb.org/t/p/w500";
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const fetching = async e => {
-    await axios.get(`${url}/movie/popular?api_key=${apikey}`).then(e => {
+    await axios.get(`/api/movies`).then(e => {
       console.log(e.data.results);
       setMovies(e.data.results);
     });
