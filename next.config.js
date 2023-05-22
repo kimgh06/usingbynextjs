@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const apikey = process.env.apikey;
+const apikey = process.env;
 const url = "https://api.themoviedb.org/3";
 const nextConfig = {
   async redirects() {
@@ -16,6 +16,9 @@ const nextConfig = {
     return [{
       source: "/api/movies",
       destination: `${url}/movie/popular?api_key=${apikey}`
+    }, {
+      source: '/api/movies/:id',
+      destination: `${url}/movie/:id`
     }];
   }
 }

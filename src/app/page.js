@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/app/Header";
+import Link from "next/link";
 import { use } from "react";
 import { useEffect, useState } from "react";
 const apikey = "5035c021fc6a2236a7950c34e421ac51";
@@ -14,7 +15,9 @@ export default function Home() {
       <Header title={"index"} />
       {movies?.map(i => {
         return <div className="movie" key={i?.id}>
-          <img src={`${imgUrl}/${i?.poster_path}`} />
+          <Link href={`/movies/${i?.id}`}>
+            <img src={`${imgUrl}/${i?.poster_path}`} />
+          </Link>
           <h4>{i?.original_title}</h4>
         </div>
       })}
