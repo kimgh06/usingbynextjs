@@ -1,12 +1,8 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
-
-export default function home() {
-  const router = useRouter();
-  console.log(router);
+export default function home({ params }) {
+  console.log(params.params[0]);
   return <>
-    hello
+    {params?.params[0]}
   </>;
 }
