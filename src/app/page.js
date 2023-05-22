@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/components/Header";
+import Header from "@/app/Header";
 import { use } from "react";
 import { useEffect, useState } from "react";
 const apikey = "5035c021fc6a2236a7950c34e421ac51";

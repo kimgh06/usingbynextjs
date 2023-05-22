@@ -9,12 +9,12 @@ const Navbar = () => {
   return <nav>
     <img src="/vercel.svg" />
     <div>
-      <Link href="/" className="a" legacyBehavior>
+      <Link href="/" className="a" >
         <span className={pathname === '/' ? "active" : ""} >
           HOME
         </span>
       </Link>
-      <Link href="/hello" legacyBehavior >
+      <Link href="/hello"  >
         <span className={pathname === '/hello' ? "active" : ""}>
           hello
         </span>

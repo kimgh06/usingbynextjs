@@ -1,5 +1,5 @@
-import Header from "@/components/Header"
-import Navbar from "@/components/Navbar"
+import Header from "@/app/Header"
+import Navbar from "@/app/Navbar"
 
 export const metadata = {
   title: 'Next.js',
@@ -10,6 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Header />
         <Navbar />
         {children}
       </body>

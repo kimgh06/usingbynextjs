@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/components/Header";
+import Header from "@/app/Header";
 
 export default function Home() {
   return <div>
