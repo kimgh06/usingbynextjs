@@ -1,21 +1,22 @@
 "use client";
 import Header from '@/app/Header';
-import axios from 'axios';
 import { use, useEffect, useState } from 'react';
 
-export default function home({ params }) {
-  const [data, setData] = useState();
+export default async function home({ params }) {
   const [title, id] = params.params || [];
-  const asdf = async e => {
-    await axios.get(`http://localhost:3000/api/movies/${id}`).then(e => {
-      console.log(e.data);
-    })
-  }
-  useEffect(e => {
-    asdf();
-  }, []);
+  const data = await getData(id);
   return <>
     <Header title={title} />
-    {title.replace(/%20/g, " ")}
+    <h2>
+      {title.replace(/%20/g, " ")}
+    </h2>
+    {data?.overview}
   </>;
+}
+
+
+async function getData(id) {
+  const movies = await (await fetch(`http://localhost:3000/api/movies/${id}`, { next: { revalidate: 10 } })).json();
+  console.log(movies);
+  return movies;
 }
