@@ -1,5 +1,6 @@
 "use client";
 import Header from '@/app/Header';
+import Link from 'next/link';
 
 export default async function home({ params }) {
   const [title, id] = params.params || [];
@@ -9,9 +10,16 @@ export default async function home({ params }) {
     <h1>
       {title.replace(/%20/g, " ")}
     </h1>
+    <p>{data?.runtime} min</p>
     <div className='main'>
-      <img src={`https://image.tmdb.org/t/p/w300${data.poster_path}`} alt={`a poster of ${title}`} />
-      {data?.overview}
+      <Link href={data?.homepage}>
+        <img src={`https://image.tmdb.org/t/p/w300${data.poster_path}`} alt={`a poster of ${title}`} />
+      </Link>
+      <div>
+        {data?.overview}
+        <h3>Genres</h3>
+        {data?.genres.map((i, n) => <span key={n}>{i?.name}&nbsp;</span>)}
+      </div>
     </div>
   </div>;
 }
