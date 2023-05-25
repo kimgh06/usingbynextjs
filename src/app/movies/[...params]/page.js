@@ -1,6 +1,5 @@
 "use client";
 import Header from '@/app/Header';
-import { use, useEffect, useState } from 'react';
 
 export default async function home({ params }) {
   const [title, id] = params.params || [];
@@ -16,7 +15,7 @@ export default async function home({ params }) {
 
 
 async function getData(id) {
-  const movies = await (await fetch(`http://localhost:3000/api/movies/${id}`, { next: { revalidate: 10 } })).json();
+  const movies = await (await fetch(`http://localhost:3000/api/movies/${id}`, { cache: 'force-cache' })).json();
   console.log(movies);
   return movies;
 }
