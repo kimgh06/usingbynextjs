@@ -19,7 +19,11 @@ const nextConfig = {
     }, {
       source: '/api/movies/:id',
       destination: `${url}/movie/:id?api_key=${apikey}`
-    }];
+    }, {
+      source: '/api/movies/img/:id',
+      destination: `${url}/movie/:id/images?api_key${apikey}`
+    }
+    ];
   }
 }
 
