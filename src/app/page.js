@@ -15,7 +15,7 @@ export default function Home() {
       <Header title={"index"} />
       {movies?.map(i => {
         return <div className="movie" key={i?.id}>
-          <Link href={`/movies/${i?.id}`}>
+          <Link href={`/movies/${i?.original_title}/${i?.id}`}>
             <img src={`${imgUrl}/${i?.poster_path}`} />
           </Link>
           <h4>{i?.original_title}</h4>
