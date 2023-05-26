@@ -13,7 +13,7 @@ export default async function home({ params }) {
     <p>{data?.runtime} min</p>
     <div className='main'>
       <Link href={data?.homepage}>
-        <img src={`https://image.tmdb.org/t/p/w300${data.poster_path}`} alt={`a poster of ${title}`} />
+        <img src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} alt={`a poster of ${title}`} />
       </Link>
       <div>
         {data?.overview}
